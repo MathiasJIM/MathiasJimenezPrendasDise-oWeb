@@ -1,0 +1,55 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 18 ene. 2023, 13:37:10
+    Author     : Mathias
+*/
+
+.block {
+    background-image: url(../images/Pareja.png);
+    border: 20px solid blue;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+
+.static {
+    position:static;
+    background: green;
+    border: 5px yellowgreen;
+    top: 400px;
+    left:500px;
+
+}
+
+.relative {
+    position: relative;
+    border: 3px solid green;
+    top: 400px;
+    left:50px;
+    width: 300px;
+    height: 200px;
+}
+
+.fixed{
+    position:fixed;
+    border:3px solid green;
+    top:150px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+}
+.cuadrado{
+    width: 200px;
+    height: 200px;
+    background: padding-box;
+    margin-bottom: 20px;
+    display:inline-block;
+}
+a{
+    display:block;
+}
