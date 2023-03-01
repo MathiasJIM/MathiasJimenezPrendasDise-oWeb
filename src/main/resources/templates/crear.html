@@ -11,5 +11,62 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <div>TODO write content</div>
-    </body>
-</html>
+        <div class="container">
+            <div class ="card-header bg-black text-white"></div>
+            <div calss="card-body">
+
+                <div class="container">
+                    <form th:object ="${persona}"
+                          th:action="@{/save}"
+                          method="POST"
+                          >
+                        <input type="hidden" th:field="*{id}">
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Nombre</label>                            
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{nombre}"class="form-control form-control-sm col-md-6" placeholder="Nombre" id="nombre">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Apellido 1</label>                            
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*apellido1}"class="form-control form-control-sm col-md-6" placeholder="Apellido 1" id="apellido1">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Apellido 2</label>                            
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*apellido2}"class="form-control form-control-sm col-md-6" placeholder="Apellido 2" id="apellido2">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Telefono</label>                            
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*telefono}"class="form-control form-control-sm col-md-6" placeholder="Telefono" id="telefono">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Email</label>                            
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*email}"class="form-control form-control-sm col-md-6" placeholder="Email" id="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3 row">                            
+                            <label  class="col-md-2 col-form-label" for="nombre">Pais</label>                            
+                            <div class="col-sm-10">
+                                <select type="text" th:field="*pais}"class="form-control form-control-sm col-md-6"id="pais" aria-descibedby="emailHelp">
+                                    <option th:each="x:${paises}"
+                                            th:value="${x.id}"
+                                            th:text="${x.pais}"/>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" value="Guardar">Submit</button>
+                        </body>
+                        </html>
