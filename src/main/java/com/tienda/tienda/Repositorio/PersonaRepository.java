@@ -4,7 +4,7 @@
  */
 package com.tienda.tienda.Repositorio;
 
-import com.tienda.tienda.Entity.Pais;
+import com.tienda.tienda.Entity.Persona;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 
@@ -13,6 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author Mathias
  */
 @Repository
-public interface PersonaRepository extends CrudRepository<Pais,Long>{
+public interface PersonaRepository extends CrudRepository<Persona,Long>{
     
 }

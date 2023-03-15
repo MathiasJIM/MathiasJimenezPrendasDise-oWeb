@@ -4,14 +4,13 @@
  */
 package com.tienda.tienda.Entity;
 
-
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 
 
 /**
@@ -22,10 +21,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "paises")
 public class Pais implements Serializable {
-    
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Id
     private String pais;
 
     public long getId() {

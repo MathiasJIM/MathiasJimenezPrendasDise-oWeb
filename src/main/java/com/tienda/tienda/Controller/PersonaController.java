@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 /**
  *
  * @author Mathias
@@ -30,38 +31,39 @@ public class PersonaController {
     @Autowired
     private IPaisService paisService;
 
-    @GetMapping("/persona")
+    @GetMapping("/personas")
     public String index(Model model) {
         List<Persona> listaPersona = personaService.getAllPersona();
         model.addAttribute("titulo", "Tabla Personas");
-        model.addAttribute("persona", "listaPersona");
+        model.addAttribute("personas", listaPersona);
         return "personas";
     }
 
     @GetMapping("/personaN")
     public String crearPersona(Model model) {
         List<Pais> listaPaises = paisService.listCountry();
-        model.addAttribute("persona", new Persona());
+        model.addAttribute("personas", new Persona());
+        model.addAttribute("paises", listaPaises);
         return "crear";
     }
 
-    @GetMapping("/delete/(id)")
-    public String eliminarPersona(@PathVariable("id") Long idPersona) {
-        personaService.delete(idPersona);
-        return "redirect:/persona";
+    @GetMapping("/delete/{id}")
+    public String eliminarPersona(@PathVariable("id") Long Persona_id) {
+        personaService.delete(Persona_id);
+        return "redirect:/personas";
     }
 
     @PostMapping("/save")
     public String guardarPersona(@ModelAttribute Persona persona) {
         personaService.savePersona(persona);
-        return "redirect:/persona";
+        return "redirect:/personas";
     }
 
-    @GetMapping("/editPersona/(id)")
-    public String editarPersona(@PathVariable("id")Long idPersona,Model model){
-        Persona persona = personaService.getPersonaByid(idPersona);
+    @GetMapping("/editPersona/{id}")
+    public String editarPersona(@PathVariable("id")Long Persona_id,Model model){
+        Persona personas = personaService.getPersonaByid(Persona_id);
         List<Pais> listaPaises = paisService.listCountry();
-        model.addAttribute("paises", persona);
+        model.addAttribute("paises", personas);
         model.addAttribute("paises", listaPaises);
         return "crear";
     }
