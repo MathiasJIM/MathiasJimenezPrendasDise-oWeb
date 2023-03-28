@@ -34,6 +34,11 @@ public class PersonaService implements IPersonaService {
     public void savePersona(Persona persona) {
         personaRepository.save(persona);
     }
+    
+     @Override
+    public List<Persona> buscarPorApellido1(String apellido1) {
+        return personaRepository.findByApellido1(apellido1);
+    }
 
     @Override
     public void delete(long id) {
