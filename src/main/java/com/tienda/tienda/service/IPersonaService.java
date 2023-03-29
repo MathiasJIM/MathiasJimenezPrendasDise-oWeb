@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface IPersonaService {
     List<Persona> buscarPorApellido1(String apellido1);
+    public Persona findByNombre (String nombre);
     public List<Persona> getAllPersona();
     public Persona getPersonaByid (long id);
     public void savePersona(Persona persona);
